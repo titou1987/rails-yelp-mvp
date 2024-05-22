@@ -1,0 +1,10 @@
+class Restaurant < ApplicationRecord
+  validates :name, presence: true
+  validates :address, presence: true
+
+  VALID_CATEGORIES = ['public', 'private', 'archived']
+
+  validates :status, inclusion: { in: VALID_STATUSES }
+  validates :category, presence: true
+
+end
